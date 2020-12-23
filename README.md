@@ -27,5 +27,5 @@ ERROR: (gcloud.iam.service-accounts.create) User [[redacted]@gmail.com] does not
 cts instance [apprenticeship-299321] (or it may not exist): Permission iam.serviceAccounts.create is required to perf
 orm this operation on project projects/apprenticeship-299321.
 ```
-
-https://cloud.google.com/docs/authentication/getting-started ("Creating a service account")
+- https://cloud.google.com/docs/authentication/getting-started ("Creating a service account")
+- "You don't have permission to create a new service account and key."

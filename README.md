@@ -29,3 +29,5 @@ orm this operation on project projects/apprenticeship-299321.
 ```
 - https://cloud.google.com/docs/authentication/getting-started ("Creating a service account")
 - "You don't have permission to create a new service account and key."
+- I think I was just trying to do things I didn't actually need to do.
+- I have skipped straight to making a new Python file.

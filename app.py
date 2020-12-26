@@ -76,9 +76,37 @@ query7 = """
     ORDER BY conversionRatePerChannelGrouping
 """
 
+query8 = """
+    SELECT date, ROUND((AVG(conversions))/(AVG(sessions)), 4) as conversionRateOverTime
+    FROM `apprenticeship-299321.sample_data.datatable`
+    GROUP BY date
+    ORDER BY date ASC
+"""
+
+# query9 = """
+#     SELECT AVG(ROUND((AVG(conversions))/(AVG(sessions)), 4)) as averageConversionRateFor2017
+#     FROM `apprenticeship-299321.sample_data.datatable`
+#     WHERE date<20180000
+#     GROUP BY date
+# """
+
+query9 = """
+    SELECT date, SUM(sessions) as totalSessions
+    FROM `apprenticeship-299321.sample_data.datatable`
+    GROUP BY date
+    ORDER BY date ASC
+"""
+
+query10 = """
+    SELECT date, SUM(conversions) as totalConversions
+    FROM `apprenticeship-299321.sample_data.datatable`
+    GROUP BY date
+    ORDER BY date ASC
+"""
+
 # TODO: clean up
 # currentQuery = query5
-currentQuery = query6
+currentQuery = query10
 
 results = client.query(currentQuery)
 

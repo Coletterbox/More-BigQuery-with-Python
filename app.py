@@ -14,6 +14,11 @@ testQuery = """
     LIMIT 10
 """
 
+testQuery1 = """
+    SELECT * FROM `apprenticeship-299321.sample_data.datatable`
+    LIMIT 100
+"""
+
 query = """
     SELECT * FROM `apprenticeship-299321.sample_data.datatable`
 """
@@ -23,15 +28,17 @@ query1 = """
 """
 
 query2 = """
-    SELECT deviceCategory, COUNT(*)
+    SELECT deviceCategory, COUNT(*) AS deviceCategoryCount
     FROM `apprenticeship-299321.sample_data.datatable`
     GROUP BY deviceCategory
+    ORDER BY deviceCategoryCount ASC
 """
 
 query3 = """
-    SELECT channelGrouping, COUNT(*)
+    SELECT channelGrouping, COUNT(*) AS channelGroupingCount
     FROM `apprenticeship-299321.sample_data.datatable`
     GROUP BY channelGrouping
+    ORDER BY channelGroupingCount ASC
 """
 
 query4 = """
@@ -45,7 +52,10 @@ query4 = """
 # conversion rate for channel grouping
 # conversion rate for date? maybe that's not useful
 
-results = client.query(query4)
+# TODO: clean up
+currentQuery = query2
+
+results = client.query(currentQuery)
 
 for row in results:
     print(str(row))

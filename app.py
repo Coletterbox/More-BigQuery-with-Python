@@ -7,7 +7,11 @@ testQuery = """
     LIMIT 10
 """
 
-results = client.query(testQuery)
+query = """
+    SELECT * FROM `apprenticeship-299321.sample_data.datatable`
+"""
+
+results = client.query(query)
 
 for row in results:
     print(str(row))

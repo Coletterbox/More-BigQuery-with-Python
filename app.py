@@ -49,6 +49,7 @@ query4 = """
     ORDER BY date ASC
 """
 
+# TODO: revisit - this may not be useful data
 query5 = """
     SELECT deviceCategory, AVG(conversions) as averageConversionsPerDeviceCategory
     FROM `apprenticeship-299321.sample_data.datatable`
@@ -61,9 +62,23 @@ query5 = """
 # conversion rate for channel grouping
 # conversion rate for date? maybe that's not useful
 
+query6 = """
+    SELECT deviceCategory, ROUND((AVG(conversions))/(AVG(sessions)), 4) as conversionRatePerDeviceCategory
+    FROM `apprenticeship-299321.sample_data.datatable`
+    GROUP BY deviceCategory
+    ORDER BY conversionRatePerDeviceCategory
+"""
+
+query7 = """
+    SELECT channelGrouping, ROUND((AVG(conversions))/(AVG(sessions)), 4) as conversionRatePerChannelGrouping
+    FROM `apprenticeship-299321.sample_data.datatable`
+    GROUP BY channelGrouping
+    ORDER BY conversionRatePerChannelGrouping
+"""
+
 # TODO: clean up
 # currentQuery = query5
-currentQuery = query
+currentQuery = query6
 
 results = client.query(currentQuery)
 

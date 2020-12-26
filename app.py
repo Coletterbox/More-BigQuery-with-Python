@@ -21,6 +21,7 @@ testQuery1 = """
 
 query = """
     SELECT * FROM `apprenticeship-299321.sample_data.datatable`
+    ORDER BY date ASC
 """
 
 query1 = """
@@ -48,12 +49,21 @@ query4 = """
     ORDER BY date ASC
 """
 
+query5 = """
+    SELECT deviceCategory, AVG(conversions) as averageConversionsPerDeviceCategory
+    FROM `apprenticeship-299321.sample_data.datatable`
+    GROUP BY deviceCategory
+    ORDER BY averageConversionsPerDeviceCategory
+"""
+
+# TODO: conversions in relation to sessions probably makes more sense than just using the figure for conversions
 # conversion rate for device category
 # conversion rate for channel grouping
 # conversion rate for date? maybe that's not useful
 
 # TODO: clean up
-currentQuery = query2
+# currentQuery = query5
+currentQuery = query
 
 results = client.query(currentQuery)
 

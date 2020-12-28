@@ -31,3 +31,17 @@ orm this operation on project projects/apprenticeship-299321.
 - "You don't have permission to create a new service account and key."
 - I think I was just trying to do things I didn't actually need to do.
 - I have skipped straight to making a new Python file.
+
+----
+
+```
+pip install jupyter_dashboards
+jupyter dashboards quick-setup --sys-prefix
+jupyter nbextension install --py jupyter_dashboards --sys-prefix
+jupyter nbextension enable --py jupyter_dashboards --sys-prefix
+conda install jupyter_dashboards -c conda-forge
+```
+To initialize this nbextension in the browser every time the notebook (or other app) loads:
+```
+jupyter nbextension enable jupyter_dashboards --py --sys-prefix
+```

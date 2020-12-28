@@ -41,3 +41,7 @@ jupyter nbextension install --py jupyter_dashboards --sys-prefix
 jupyter nbextension enable --py jupyter_dashboards --sys-prefix
 conda install jupyter_dashboards -c conda-forge
 ```
+To initialize this nbextension in the browser every time the notebook (or other app) loads:
+```
+jupyter nbextension enable jupyter_dashboards --py --sys-prefix
+```

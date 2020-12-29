@@ -45,3 +45,8 @@ To initialize this nbextension in the browser every time the notebook (or other 
 ```
 jupyter nbextension enable jupyter_dashboards --py --sys-prefix
 ```
+
+----
+
+- would prefer if key was not hardcoded
+- fix dates - date as int causes issues

@@ -49,4 +49,4 @@ jupyter nbextension enable jupyter_dashboards --py --sys-prefix
 ----
 
 - would prefer if key was not hardcoded
-- fix dates - date as int causes issues
+- fix dates - date as int causes issues - think about it (as in, the part doing the conversion) in terms of what the function takes as arguments

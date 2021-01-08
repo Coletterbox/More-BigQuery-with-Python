@@ -1,52 +1,11 @@
 # More BigQuery with Python
 
-- Project ID: apprenticeship-299321
-- Open Cloud Shell
-```
-gcloud auth list
-gcloud config list project
-```
-- If not already set:
-```
-gcloud config set project apprenticeship-299321
-```
-```
-[redacted]@cloudshell:~ (apprenticeship-299321)$ gcloud services list
-ERROR: (gcloud.services.list) User [[redacted]@gmail.com] does not have permission to access projects instance [
-apprenticeship-299321] (or it may not exist): The caller does not have permission
-[redacted]@cloudshell:~ (apprenticeship-299321)$ gcloud services enable bigquery.googleapis.com
-ERROR: (gcloud.services.enable) PERMISSION_DENIED: The caller does not have permission
-```
-```
-export PROJECT_ID=$(gcloud config get-value core/project)
-gcloud iam service-accounts create bigquery-sa \
-  --display-name "bigquery service account"
-```
-```
-ERROR: (gcloud.iam.service-accounts.create) User [[redacted]@gmail.com] does not have permission to access proje
-cts instance [apprenticeship-299321] (or it may not exist): Permission iam.serviceAccounts.create is required to perf
-orm this operation on project projects/apprenticeship-299321.
-```
-- https://cloud.google.com/docs/authentication/getting-started ("Creating a service account")
-- "You don't have permission to create a new service account and key."
-- I think I was just trying to do things I didn't actually need to do.
-- I have skipped straight to making a new Python file.
+- Hello!
 
-----
+- The title seemed logical at the time. ("More" because I used "BigQuery with Python" as the title for a BigQuery guide I followed.)
 
-```
-pip install jupyter_dashboards
-jupyter dashboards quick-setup --sys-prefix
-jupyter nbextension install --py jupyter_dashboards --sys-prefix
-jupyter nbextension enable --py jupyter_dashboards --sys-prefix
-conda install jupyter_dashboards -c conda-forge
-```
-To initialize this nbextension in the browser every time the notebook (or other app) loads:
-```
-jupyter nbextension enable jupyter_dashboards --py --sys-prefix
-```
+- **The project ID is a string (project_id) declared in projectIDContainer.py; I'll need to remember to send that to you because it's in the .gitignore.**
 
-----
+- Anything in this folder that isn't linked here and sounds like a draft is just a draft that isn't really necessary to look at. I was creating new iterations while having the old version on the left and the current version on the right.
 
-- would prefer if key was not hardcoded
-- fix dates - date as int causes issues - think about it (as in, the part doing the conversion) in terms of what the function takes as arguments, and also what is the data type when a variable represents an SQL column, and also, with stuff like x='date' - did 'date' get exported somewhere? can you do something to 'date' before it gets taken as an argument?
+- I hope you have as much fun with this as I had making it! I mean, probably not, because making it was the fun part, but anyway...

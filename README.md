@@ -6,6 +6,6 @@
 
 - **The project ID is a string (project_id) declared in projectIDContainer.py; I'll need to remember to send that to you because it's in the .gitignore.**
 
-- Anything in this folder that sounds like a draft is just a draft that isn't really necessary to look at. I was creating new iterations while having the old version on the left and the current version on the right.
+- Anything in this folder that isn't linked here and sounds like a draft is just a draft that isn't really necessary to look at. I was creating new iterations while having the old version on the left and the current version on the right.
 
 - I hope you have as much fun with this as I had making it! I mean, probably not, because making it was the fun part, but anyway...
